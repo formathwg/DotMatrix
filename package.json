@@ -1,0 +1,43 @@
+{
+  "name": "dotmatrix-studio",
+  "version": "1.0.0",
+  "description": "Transform photos into stylish halftone dot art",
+  "main": "electron-main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "electron:build": "vite build && electron-builder"
+  },
+  "dependencies": {
+    "@google/genai": "^0.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "vite": "^5.1.4",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.dotmatrix.studio",
+    "productName": "DotMatrix Studio",
+    "mac": {
+      "category": "public.app-category.graphics-design",
+      "target": ["dmg"]
+    },
+    "files": [
+      "dist/**/*",
+      "electron-main.js"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  }
+}

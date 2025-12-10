@@ -1,0 +1,7 @@
+{
+  "name": "DotMatrix Studio",
+  "description": "Transform photos into stylish halftone dot art. Features real-time customization and AI-powered artistic analysis.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
